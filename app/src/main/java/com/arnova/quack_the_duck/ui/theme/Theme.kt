@@ -1,15 +1,20 @@
 package com.arnova.quack_the_duck.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.unit.sp
+import com.arnova.quack_the_duck.R
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -33,6 +38,25 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+val PressStart2P = FontFamily(
+    Font(R.font.press_start_2p)
+)
+
+val CustomTypography = Typography(
+    displayLarge = TextStyle(
+        fontFamily = PressStart2P,
+        fontSize = 30.sp,
+    ),
+    bodyLarge = TextStyle(
+        fontFamily = PressStart2P,
+        fontSize = 16.sp,
+    ),
+    titleLarge = TextStyle(
+        fontFamily = PressStart2P,
+        fontSize = 20.sp,
+    )
+)
+
 @Composable
 fun QuackTheDuckTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
@@ -52,7 +76,7 @@ fun QuackTheDuckTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = CustomTypography,
         content = content
     )
 }
